@@ -46,24 +46,24 @@ export async function GET(request) {
         ][date.getDay()];
       },
       monthly: (date) => {
-        let month = `${date.getMonth()}`;
+        let month = `${date.getMonth() + 1}`;
         if (month.length < 2) month = `0${month}`;
-        return `${month}${date.getFullYear()}`;
+        return `${month}:${date.getFullYear()}`;
       },
       quaterly: (date) => {
-        let quarter = Math.ceil(date.getMonth() / 3);
-        return `Q${quarter}${date.getFullYear()}`;
+        let quarter = Math.ceil(date.getMonth() / 4) + 1;
+        return `Q${quarter}:${date.getFullYear()}`;
       },
       halfyearly: (date) => {
-        let h = Math.ceil(date.getMonth() / 2);
-        return `H${h}${date.getFullYear()}`;
+        let h = Math.ceil(date.getMonth()) + 1 <= 6 ? 1 : 2;
+        return `H${h}:${date.getFullYear()}`;
       },
       yearly: (date) => {
         return `${date.getFullYear()}`;
       },
     };
     let downsampled_map = {};
-    
+
     for (let i = 0; i < DATASET.length; i++) {
       let date = new Date(DATASET[i]["Timestamp"]);
       let profit_percentage = parseFloat(DATASET[i]["Profit Percentage"]);

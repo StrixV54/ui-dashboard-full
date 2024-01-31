@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
 
 const timePeriodList = [
-  // "daily",  - too much data, that why have commented
-  // "weekday", - too much data, that why have commented
+  // "daily",  - too much data, thats why I have commented it
+  // "weekday", - too much data, thats why I have commented it
   "monthly",
   "quaterly",
   "halfyearly",
@@ -55,7 +55,7 @@ export default function Graph() {
   }, [timeframe]);
 
   return (
-    <div className="min-h-[260px] max-h-[360px] min-w-[540px] max-w-full rounded-2xl flex p-6 flex-col bg-white flex-1">
+    <div className="min-h-[260px] min-w-[540px] max-w-full rounded-2xl flex p-6 flex-col bg-white flex-1">
       <div className="font-[600] text-xl mb-[12px] flex w-full items-center justify-between">
         <div>Growth</div>
         <details className="dropdown">
@@ -76,11 +76,11 @@ export default function Graph() {
           </ul>
         </details>
       </div>
-      <div className="flex-1 mt-2 flex flex-wrap overflow-scroll h-full">
+      <div className="max-h-[260px] flex-1 mt-2 flex items-center justify-center flex-wrap overflow-scroll ">
         {!isLoading && (
           <ResponsiveLine
             data={graphData}
-            margin={{ top: 10, right: 20, bottom: 30, left: 30 }}
+            margin={{ top: 15, right: 20, bottom: 30, left: 30 }}
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
