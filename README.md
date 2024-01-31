@@ -5,7 +5,7 @@
 <div style="width: full;" >
 <img src="/public/dashboard-image.png"
      alt="Image"
-     height=500
+     height=400
      style="float: center; margin: auto;" />
 </div>
 
