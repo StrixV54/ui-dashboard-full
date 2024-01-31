@@ -2,7 +2,7 @@ import { sidebarOptions } from "../utils/data";
 
 export default function Sidebar() {
   return (
-    <div className="w-[280px] max-h-[890px] min-h-[680px] bg-white rounded-2xl flex flex-col">
+    <div className="w-[280px] min-h-[680px] bg-white rounded-2xl flex flex-col">
       <div className="px-[24px] py-[16px] flex items-center justify-start gap-[6px]">
         <img
           alt="logo"

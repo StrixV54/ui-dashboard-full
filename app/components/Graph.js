@@ -55,7 +55,7 @@ export default function Graph() {
   }, [timeframe]);
 
   return (
-    <div className="min-h-[260px] max-h-[360px] min-w-[540px] rounded-2xl flex p-6 flex-col bg-white flex-1">
+    <div className="min-h-[260px] max-h-[360px] min-w-[540px] max-w-full rounded-2xl flex p-6 flex-col bg-white flex-1">
       <div className="font-[600] text-xl mb-[12px] flex w-full items-center justify-between">
         <div>Growth</div>
         <details className="dropdown">

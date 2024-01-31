@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex h-screen flex-row bg-[#F6F6F3] py-4 pl-4 overflow-hidden">
       <Sidebar />
       {/* Main Dashboard */}
-      <div className="flex-1 flex flex-wrap ml-4 pr-4 gap-4 h-full w-full overflow-y-scroll">
+      <div className="flex-1 flex flex-wrap ml-4 pr-4 gap-4 rounded-s-2xl h-full w-full overflow-y-scroll">
         {/*  Revenue board */}
         <div className="h-[260px] min-w-[410px] rounded-2xl flex flex-1 gap-2 p-6 flex-col bg-white">
           <div className="mb-4 font-[600] text-xl">Revenues</div>
