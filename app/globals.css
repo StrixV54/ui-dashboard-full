@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.yellow-shade-bg {
+  background: linear-gradient(
+    90deg,
+    #ffcd71 -2.57%,
+    rgba(255, 205, 113, 0) 112.5%
+  );
+}
