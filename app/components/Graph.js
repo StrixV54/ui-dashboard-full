@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
 
 const timePeriodList = [
-  "daily",
-  "weekday",
+  // "daily",  - too much data, that why have commented
+  // "weekday", - too much data, that why have commented
   "monthly",
   "quaterly",
   "halfyearly",
@@ -22,6 +22,8 @@ const linearPatternArray = (diff = 5) => {
   return arr;
 };
 
+const URL_API = process.env.URL_API || "http://localhost:3000/";
+
 export default function Graph() {
   const [timeframe, setTimeFrame] = useState(
     timePeriodList[timePeriodList.length - 1]
@@ -30,10 +32,9 @@ export default function Graph() {
   const [graphData, setGraphData] = useState(null);
 
   const getData = async (timeframe) => {
-    const res = await fetch(
-      `https://ui-dashboard-full.vercel.app/api?timeperiod=${timeframe}`,
-      { cache: "force-cache" }
-    );
+    const res = await fetch(`${URL_API}/api?timeperiod=${timeframe}`, {
+      cache: "force-cache",
+    });
     const result = await res.json();
     return result;
   };
@@ -48,7 +49,6 @@ export default function Graph() {
         }));
         const filteredData = [{ id: "profit", data }];
         setGraphData(filteredData);
-        console.log(filteredData);
       })
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
