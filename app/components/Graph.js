@@ -22,8 +22,6 @@ const linearPatternArray = (diff = 5) => {
   return arr;
 };
 
-const URL_API = "https://ui-dashboard-full.vercel.app/"; //can be set in env file
-
 export default function Graph() {
   const [timeframe, setTimeFrame] = useState(
     timePeriodList[timePeriodList.length - 1]
@@ -32,7 +30,7 @@ export default function Graph() {
   const [graphData, setGraphData] = useState(null);
 
   const getData = async (timeframe) => {
-    const res = await fetch(`${URL_API}/api?timeperiod=${timeframe}`, {
+    const res = await fetch(`/api?timeperiod=${timeframe}`, {
       cache: "force-cache",
     });
     const result = await res.json();
