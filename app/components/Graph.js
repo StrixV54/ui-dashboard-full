@@ -22,7 +22,7 @@ const linearPatternArray = (diff = 5) => {
   return arr;
 };
 
-const URL_API = process.env.NEXT_PUBLIC_URL_API || "http://localhost:3000/";
+const URL_API = "https://ui-dashboard-full.vercel.app/"; //can be set in env file
 
 export default function Graph() {
   const [timeframe, setTimeFrame] = useState(
